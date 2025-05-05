@@ -26,6 +26,7 @@ watch(form, (newForm) => {
 //     return {
 //       email: "",
 //       password: "",
+//       message: "",
 //     };
 //   },
 //   methods: {
@@ -34,6 +35,15 @@ watch(form, (newForm) => {
 //     },
 //   },
 //   emits: ["login"],
+//   watch: {
+//     password(newPass, oldPass) {
+//       if (newPass.length < 6) {
+//         this.message = "Password must be at least 6 characters long";
+//       } else {
+//         this.message = "Password is valid";
+//       }
+//     },
+//   },
 // };
 </script>
 

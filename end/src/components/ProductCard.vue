@@ -20,9 +20,17 @@ const rupiah = computed(() => {
 // Option API example
 // export default {
 //   props: {
-//     product: Object
-//   }
-// }
+//     product: Object,
+//   },
+//   computed: {
+//     rupiah() {
+//       return new Intl.NumberFormat("id-ID", {
+//         style: "currency",
+//         currency: "IDR",
+//       }).format(this.product.price);
+//     },
+//   },
+// };
 </script>
 
 <template>
