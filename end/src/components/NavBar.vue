@@ -13,7 +13,6 @@ const handleLogout = () => {
 //       this.$emit("logout");
 //     },
 //   },
-//   emits: ["logout"],
 // };
 </script>
 

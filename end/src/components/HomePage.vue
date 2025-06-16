@@ -27,7 +27,6 @@ const products = ref(data);
         v-for="product in products"
         :key="product.id"
       >
-        <!-- // prop example -->
         <ProductCard :product="product" />
       </div>
     </main>

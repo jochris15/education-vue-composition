@@ -5,7 +5,6 @@ export default {
       this.$emit("logout");
     },
   },
-  emits: ["logout"],
 };
 </script>
 

@@ -34,7 +34,6 @@ watch(form, (newForm) => {
 //       this.$emit("login", this.email, this.password);
 //     },
 //   },
-//   emits: ["login"],
 //   watch: {
 //     password(newPass, oldPass) {
 //       if (newPass.length < 6) {
@@ -51,7 +50,7 @@ watch(form, (newForm) => {
   <!-- login -->
   <div class="min-h-screen flex items-center justify-center w-full">
     <div
-      class="rounded-lg px-8 py-6 w-1/3 bg-blue-400 border-2 border-black rounded-2xl shadow-[2px_2px_0px_rgba(0,0,0,1)]"
+      class="px-8 py-6 w-1/3 bg-blue-400 border-2 border-black rounded-2xl shadow-[2px_2px_0px_rgba(0,0,0,1)]"
     >
       <h1 class="text-2xl font-bold text-center mb-4">Login</h1>
       <form @submit.prevent="handleLogin">
@@ -60,7 +59,7 @@ watch(form, (newForm) => {
           <input
             type="email"
             id="email"
-            class="bg-white rounded-2xl w-full px-3 py-2 border-2 border-black rounded-2xl shadow-[2px_2px_0px_rgba(0,0,0,1)]"
+            class="bg-white w-full px-3 py-2 border-2 border-black rounded-2xl shadow-[2px_2px_0px_rgba(0,0,0,1)]"
             placeholder="your@email.com"
             v-model="form.email"
           />
@@ -70,7 +69,7 @@ watch(form, (newForm) => {
           <input
             type="password"
             id="password"
-            class="bg-white rounded-2xl w-full px-3 py-2 border-2 border-black rounded-2xl shadow-[2px_2px_0px_rgba(0,0,0,1)]"
+            class="bg-white w-full px-3 py-2 border-2 border-black rounded-2xl shadow-[2px_2px_0px_rgba(0,0,0,1)]"
             placeholder="Enter your password"
             v-model="form.password"
           />

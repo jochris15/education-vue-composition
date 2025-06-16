@@ -13,7 +13,6 @@ const login = (email, password) => {
 };
 
 const logout = () => {
-  // kalo mau akses nilai state ref, harus pakai .value di js
   isLoggedIn.value = false;
 };
 
@@ -43,7 +42,7 @@ const logout = () => {
 <template>
   <div class="p-5">
     <LoginPage @login="login" v-if="!isLoggedIn" />
-    <div v-if="isLoggedIn">
+    <div v-else>
       <NavBar @logout="logout"></NavBar>
       <HomePage />
     </div>

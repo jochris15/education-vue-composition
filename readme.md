@@ -18,13 +18,18 @@ Composition API memberikan beberapa keuntungan dibandingkan dengan Options API, 
 - **Smaller Production Bundle**, dengan Composition API kita bisa mengurangi ukuran bundle aplikasi kita karena kita bisa mengimpor hanya fungsi-fungsi yang kita butuhkan.
 - **Better Performance**, Composition API dapat memberikan performa yang lebih baik dalam beberapa kasus, terutama ketika kita memiliki banyak komponen yang saling berinteraksi.
 
+## [Script Setup](https://vuejs.org/api/sfc-script-setup.html#script-setup)
+Script Setup adalah sintaks baru yang diperkenalkan di Vue 3.2 untuk membuat komponen dengan Composition API. Dengan Script Setup, kita bisa menulis komponen dengan cara yang lebih sederhana dan bersih. Beberapa fitur dari Script Setup antara lain:
+- **Tanpa `export default`**: Kita tidak perlu menulis `export default` di dalam komponen, state sudah otomatis terekspos ke template.
+- **Akses Langsung**: Kita bisa langsung mengakses reactive properties, computed properties, dan methods tanpa perlu mendeklarasikannya di dalam `setup()` function.
+
 ## [Reactive Properties](https://vuejs.org/guide/essentials/reactivity-fundamentals.html)
 Reactive properties adalah properti yang dapat berubah secara reaktif dan akan mentrigger proses rerender ketika nilainya berubah. Dalam Composition API, kita dapat menggunakan fungsi `ref()` dan `reactive()` untuk membuat reactive properties.
-- **ref()**: digunakan untuk membuat reactive property yang bersifat primitif (seperti string, number, boolean, dll). Jika mau akses nilainya di javascript, harus menggunakan `.value`, tetapi jika mau akses nilainya di template, kita tidak perlu menggunakan `.value`.
-- **reactive()**: digunakan untuk membuat reactive property yang bersifat objek (seperti array, object, dll). Bisa langsung diakses tanpa menggunakan `.value`.
+- **ref()**: digunakan untuk membuat reactive property. Jika mau akses nilainya di javascript, harus menggunakan `.value`, tetapi jika mau akses nilainya di template, kita tidak perlu menggunakan `.value`.
+- **reactive()**: digunakan untuk membuat reactive object/array. Kita tidak perlu menggunakan `.value` untuk mengakses nilainya, tetapi ada beberapa batasan yang perlu diperhatikan.
 
-### [Reactive Limitations](https://vuejs.org/guide/essentials/reactivity-fundamentals.html#limitations-of-reactive)
-Mungkin reactive terlihat lebih praktis karena kita tidak perlu menggunakan `.value` untuk mengakses nilainya, tetapi ada beberapa hal yang perlu diperhatikan ketika menggunakan reactive:
+### [reactive() Limitations](https://vuejs.org/guide/essentials/reactivity-fundamentals.html#limitations-of-reactive)
+Mungkin `reactive()` terlihat lebih praktis karena kita tidak perlu menggunakan `.value` untuk mengakses nilainya, tetapi ada beberapa hal yang perlu diperhatikan ketika menggunakan reactive:
 - Tidak menerima tipe data primitif seperti string, number dan boolean.
 - Tidak bisa mengganti keseluruhan objek.
 - Tidak bisa di-destructure, jika di destructure maka kita tidak bisa mendapatkan reactivity-nya.
@@ -40,3 +45,7 @@ Computed property adalah properti yang dihitung berdasarkan reactive properties 
 
 ## [Watchers](https://vuejs.org/guide/essentials/watchers.html)
 Watchers adalah fungsi yang digunakan untuk memantau perubahan pada reactive properties. Dalam Composition API, kita dapat menggunakan fungsi `watch()` untuk membuat watcher. Watcher akan dieksekusi setiap kali nilai reactive property yang dipantau berubah.
+
+## Props & Emits in Composition API
+- [Props](https://vuejs.org/guide/components/props.html#props) : gunakan `defineProps()` untuk mendefinisikan props yang diterima oleh komponen.
+- [Emits](https://vuejs.org/guide/components/events.html#declaring-emitted-events) : gunakan `defineEmits()` untuk mendefinisikan events yang akan di-emits oleh komponen.

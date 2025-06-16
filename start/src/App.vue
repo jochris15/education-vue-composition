@@ -29,7 +29,7 @@ export default {
 <template>
   <div class="p-5">
     <LoginPage @login="login" v-if="!isLoggedIn" />
-    <div v-if="isLoggedIn">
+    <div v-else>
       <NavBar @logout="logout"></NavBar>
       <HomePage />
     </div>
